@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Simple</title>
+</head>
+<body>
+    <h2>Chat</h2>
+
+    <div id="mensajes"></div>
+
+    <input id="texto" placeholder="Escribe algo..." autocomplete="off">
+    <button onclick="enviar()">Enviar</button>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        socket.on("mensaje", (msg) => {
+            const div = document.getElementById("mensajes");
+            div.innerHTML += `<p>${msg}</p>`;
+        });
+
+        function enviar() {
+            const texto = document.getElementById("texto").value;
+            socket.emit("mensaje", texto);
+            document.getElementById("texto").value = "";
+        }
+    </script>
+</body>
+</html>
