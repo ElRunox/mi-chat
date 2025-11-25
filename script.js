@@ -25,6 +25,7 @@ io.on("connection", (socket) => {
 
 server.listen(3000, () => {
     console.log("Servidor corriendo en http://localhost:3000");
+});
 // Cuando carga la página, revisa si ya tiene nombre
 window.addEventListener("DOMContentLoaded", () => {
     const savedUser = sessionStorage.getItem("username");
@@ -53,7 +54,4 @@ function startChat(username) {
     document.getElementById("chatContainer").style.display = "block";
 
     console.log("Bienvenido:", username);
-}
-
-});
-
+};
