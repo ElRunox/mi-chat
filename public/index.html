@@ -4,10 +4,15 @@
     <title>Chat rojo</title>
 </head>
 <body>
+<style>
+    #tituloChat {
+        font-size: 18px;
+    }
+</style>
 
 <!-- ENCABEZADO -->
 <header style="display:flex; align-items:center; gap:10px;">
-    <h1 style="margin:0;">Chat de emergencia</h1>
+    <h1 id="tituloChat">Chat de emergencia</h1>
     <img src="img/gato_rojo.jfif"
          style="width:50px;height:50px; border-radius:10px;">
 </header>
@@ -16,10 +21,10 @@
 <div id="loginBox" style="margin-bottom:20px;">
     <h2>Elige un nombre y tu foto</h2>
 
-    <input id="usernameInput" placeholder="Escribe tu nombre">
+    <input id="usernameInput" placeholder="Escribe tu ">
 
     <div style="margin-top:10px;">
-        <p>👉 Pega aquí el link directo de tu imagen</p>
+        <p>Pega aquí el link directo de tu imagen pra tu avatar</p>
         <input id="imgInput" placeholder="https://imagen.jpg" style="width:250px;">
     </div>
 
