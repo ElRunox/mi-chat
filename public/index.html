@@ -20,12 +20,12 @@
 <!-- LOGIN -->
 <div id="loginBox" style="margin-bottom:20px;">
     <h2>Elige un nombre y tu foto</h2>
-
+    
     <input id="usernameInput" placeholder="Escribe tu ">
 
     <div style="margin-top:10px;">
         <p>Pega aquí el link directo de tu imagen pra tu avatar</p>
-        <input id="imgInput" placeholder="https://imagen.jpg" style="width:250px;">
+        <input id="imgInput" placeholder="https://imagen.jpg" style="width:250px;" onkeydown="if(event.key==='Enter'){setUsername()}">
     </div>
 
     <div style="margin-top:10px;">
