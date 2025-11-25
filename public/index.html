@@ -17,7 +17,7 @@
     <!-- Contenedor del chat -->
     <div id="chatContainer" style="display:none;">
         <div id="mensajes"></div>
-        <input id="texto" placeholder="Escribe algo..." autocomplete="off">
+        <input id="texto" placeholder="Escribe algo..." autocomplete="off" onkeydown="if(event.key==='Enter'){enviar()}">
         <button onclick="enviar()">Enviar</button>
     </div>
 
