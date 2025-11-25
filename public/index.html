@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Chat Verde</title>
+    <title>Chat rojo</title>
 </head>
 <body>
-    <header>
-        <h1>Chat de emergencia</h1>
-    </header>
+<header style="display:flex; align-items:center; gap:10px;">
+        <h1 style="margin:0;">Chat de emergencia</h1>
+    <img src="img/gato_rojo.jfif"
+         style="width:50px;height:50px; border-radius:10px;">
+</header>
 
-    <h2>Chat</h2>
+    <h2></h2>
 
-    <!-- Nombre de usuario -->
-    <input id="usernameInput" placeholder="Escribe tu nombre" onkeydown="if(event.key==='Enter'){setUsername()}">
+<div id="loginBox" style="margin-bottom:20px;">
+    <h2>Elige un nombre y tu foto</h2>
+
+    <input id="usernameInput" placeholder="Escribe tu nombre" autocomplete="off">
+
+    <div style="margin-top:10px;">
+        <p>👉 Pega aquí el link directo de tu imagen</p>
+        <input id="imgInput" placeholder="https://imagen.jpg" style="width:250px;">
+    </div>
+
+    <div style="margin-top:10px;">
+        <p>Vista previa:</p>
+        <img id="previewImg" src="" style="width:30px;height:30px;border-radius:5px;display:none;">
+    </div>
+
     <button onclick="setUsername()">Entrar</button>
+</div>
 
     <!-- Contenedor del chat -->
     <div id="chatContainer" style="display:none;">

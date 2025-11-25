@@ -42,3 +42,40 @@ socket.on("mensaje", (msg) => {
     const div = document.getElementById("mensajes");
     div.innerHTML += `<p>${msg}</p>`;
 });
+// Mostrar vista previa automática
+document.getElementById("imgInput").addEventListener("input", function () {
+    const url = this.value.trim();
+    const preview = document.getElementById("previewImg");
+
+    if (url.length < 5) {
+        preview.style.display = "none";
+        return;
+    }
+
+    preview.src = url;
+    preview.style.display = "block";
+});
+
+// Guardar nombre y foto
+function setUsername() {
+    const username = document.getElementById("usernameInput").value.trim();
+    const imgURL = document.getElementById("imgInput").value.trim();
+
+    if (!username) {
+        alert("Escribe un nombre válido");
+        return;
+    }
+
+    if (!imgURL) {
+        alert("Pega un link de imagen");
+        return;
+    }
+
+    // Guardamos en sessionStorage para toda la sesión
+    sessionStorage.setItem("username", username);
+    sessionStorage.setItem("avatar", imgURL);
+
+    // Ocultamos el login
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("chatContainer").style.display = "block";
+}
