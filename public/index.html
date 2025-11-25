@@ -4,27 +4,19 @@
     <title>Chat rojo</title>
 </head>
 <body>
+
+<!-- ENCABEZADO -->
 <header style="display:flex; align-items:center; gap:10px;">
-        <h1 style="margin:0;">Chat de emergencia</h1>
+    <h1 style="margin:0;">Chat de emergencia</h1>
     <img src="img/gato_rojo.jfif"
          style="width:50px;height:50px; border-radius:10px;">
 </header>
 
-    <h2></h2>
-
+<!-- LOGIN -->
 <div id="loginBox" style="margin-bottom:20px;">
     <h2>Elige un nombre y tu foto</h2>
 
-<div id="loginBox">
     <input id="usernameInput" placeholder="Escribe tu nombre">
-    <input id="imgInput" placeholder="Pega el link de tu imagen">
-    <button onclick="setUsername()">Entrar</button>
-</div>
-
-<div id="chatContainer" style="display:none;">
-    <!-- chat -->
-</div>
-
 
     <div style="margin-top:10px;">
         <p>👉 Pega aquí el link directo de tu imagen</p>
@@ -33,24 +25,30 @@
 
     <div style="margin-top:10px;">
         <p>Vista previa:</p>
-        <img id="previewImg" src="" style="width:30px;height:30px;border-radius:5px;display:none;">
+        <img id="previewImg" src=""
+             style="width:30px;height:30px;border-radius:5px;display:none;">
     </div>
 
     <button onclick="setUsername()">Entrar</button>
 </div>
 
-    <!-- Contenedor del chat -->
-    <div id="chatContainer" style="display:none;">
-        <div id="mensajes"></div>
-        <input id="texto" placeholder="Escribe algo..." autocomplete="off" onkeydown="if(event.key==='Enter'){enviar()}">
-        <button onclick="enviar()">Enviar</button>
-    </div>
+<!-- CHAT -->
+<div id="chatContainer" style="display:none;">
+    <div id="mensajes"></div>
 
-    <footer>
-        <p>© 2025 Runox</p>
-    </footer>
+    <input id="texto" placeholder="Escribe algo..." autocomplete="off"
+           onkeydown="if(event.key==='Enter'){enviar()}">
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="script.js"></script>
+    <button onclick="enviar()">Enviar</button>
+</div>
+
+<!-- PIE -->
+<footer>
+    <p>© 2025 Runox</p>
+</footer>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
